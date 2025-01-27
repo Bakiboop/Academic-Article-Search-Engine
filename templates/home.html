@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PADA SCHOLAR</title>
+</head>
+<body>
+    <div style="text-align:center;">
+    <header>
+        <h1>PADA SCHOLAR</h1>
+    </header>
+    </div>
+    
+    <div style="text-align:center;">
+        <form action="/search" method="get">
+        <input type="text" id="search" name="search">
+        <button type="submit">Search</button>
+
+    
+        <label for="filter">filter:</label>
+        <input type="text" id="filter_search" name="filter_search">
+        <select id="filter" name="filter">
+            <option value="none">None</option>
+            <option value="authors">authors</option>
+            <option value="date">date</option>
+        </select>
+
+            <p><input type="radio" id="Boolean" name="search_type" value="Boolean" checked>
+            <label for="Boolean">Boolean Retrieval</label>
+
+            <input type="radio" id="VSM" name="search_type" value="VSM">
+            <label for="VSM">VSM</label>
+
+            <input type="radio" id="Okapi" name="search_type" value="Okapi">
+            <label for="Okapi">Okapi BM 25</label></p>
+
+        </form>
+    </div>
+    
+    
+
+</body>
+</html>

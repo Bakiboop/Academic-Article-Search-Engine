@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEARCHED</title>
+</head>
+<body>
+     <div>
+         <form action="/search" method="get">
+         <input type="text" id="search" name="search">
+         <button type="submit">Search</button>
+         
+        <label for="filter">filter:</label>
+        <input type="text" id="filter_search" name="filter_search">
+        <select id="filter" name="filter">
+             <option value="none">None</option>
+             <option value="authors">authors</option>
+             <option value="date">date</option>
+        </select>
+         
+         <p><input type="radio" id="Boolean" name="search_type" value="Boolean" checked>
+         <label for="Boolean">Boolean Retrieval</label>
+
+         <input type="radio" id="VSM" name="search_type" value="VSM">
+         <label for="VSM">VSM</label>
+
+         <input type="radio" id="Okapi" name="search_type" value="Okapi">
+         <label for="Okapi">Okapi BM 25</label></p>
+     </div>   
+     
+    <div>
+        {% if papers %}
+            {% for paper in papers %}
+                <h1>{{ paper.title }}</h1>
+                <p>By {{ paper.authors }} on {{ paper.date }}</p>
+                <p><label>Abstract: </label>{{ paper.abstract }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
